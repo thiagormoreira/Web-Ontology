@@ -247,7 +247,7 @@ function query($person){
     $query = $query->execute($model);
     
     foreach($query as $i => $result){
-        $resultArr['competence__needed']['know_where'][$i] = formatSet($result['know_where']);
+        $resultArr['competence_needed']['know_where'][$i] = formatSet($result['know_where']);
     }
     
     $sparql = " SELECT ?know_when
@@ -267,18 +267,13 @@ function query($person){
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    $resultArr['competence_needed']['know_what'] = array_unique($resultArr['competence_needed']['know_what']);
+    $resultArr['competence_needed']['know_how'] = array_unique($resultArr['competence_needed']['know_how']);
+    $resultArr['competence_needed']['know_why'] = array_unique($resultArr['competence_needed']['know_why']);
+    $resultArr['competence_needed']['know_with'] = array_unique($resultArr['competence_needed']['know_with']);
+    $resultArr['competence_needed']['know_who'] = array_unique($resultArr['competence_needed']['know_who']);
+    $resultArr['competence_needed']['know_where'] = array_unique($resultArr['competence_needed']['know_where']);
+    $resultArr['competence_needed']['know_when'] = array_unique($resultArr['competence_needed']['know_when']);
     
     return $resultArr;
 }

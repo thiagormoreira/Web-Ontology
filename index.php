@@ -132,7 +132,13 @@
                   ";
             
                     echo "<pre>";
+                    print_r(array_diff($results['competence_needed']['know_what'],$results['competence_known']['know_what']));
+                    print_r(array_diff($results['competence_needed']['know_how'],$results['competence_known']['know_how']));
+                    print_r(array_diff($results['competence_needed']['know_why'],$results['competence_known']['know_why']));
+                    print_r(array_diff($results['competence_needed']['know_with'],$results['competence_known']['know_with']));
                     print_r(array_diff($results['competence_needed']['know_who'],$results['competence_known']['know_who']));
+                    print_r(array_diff($results['competence_needed']['know_where'],$results['competence_known']['know_where']));
+                    print_r(array_diff($results['competence_needed']['know_when'],$results['competence_known']['know_when']));
                     echo "</pre>";
                     
                 echo "
