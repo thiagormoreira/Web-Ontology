@@ -106,22 +106,23 @@
                     $neededPerc = 100 - $knownPerc;  
                 
                 echo '
-                <h4>Nome que nao sei</h4>
+                <h4>Aderência</h4>
                 <div class="progress">
                     <div class="bar bar-success" style="width: ' . $knownPerc . '%;">' . $knownPerc . '%</div>
                     <div class="bar bar-danger" style="width: ' . $neededPerc . '%;">' . $neededPerc . '%</div>
                 </div>';
-                    
-                    echo"
+                ?>
+            </div>
                 <div>
                   <h4>Competências que faltam para o atual cargo</h4>
                   <p>Deficiência atual do funcionário</p>
-                  ";
+                </div>
+                      <?php
                 
-                    echo '<div class="accordion" id="accordion2">
+                    echo '<div class="accordion" id="accordion1">
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
                                 Know_What</a>
                                 </div>
                                 <div id="collapseOne" class="accordion-body collapse in">
@@ -135,7 +136,7 @@
                     
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
                                 Know_How
                               </a>
                             </div>
@@ -150,7 +151,7 @@
                     
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTree">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTree">
                                 Know_Why
                               </a>
                             </div>
@@ -165,7 +166,7 @@
                     
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
                                 Know_With
                               </a>
                             </div>
@@ -180,7 +181,7 @@
                     
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
                                 Know_Who
                               </a>
                             </div>
@@ -195,7 +196,7 @@
                 
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
                                 Know_Where
                               </a>
                             </div>
@@ -210,7 +211,7 @@
                     
                     echo '<div class="accordion-group">
                             <div class="accordion-heading">
-                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
                                 Know_When
                               </a>
                             </div>
@@ -223,24 +224,120 @@
                             </div>
                           </div>';
                     
-                    
-                    echo "</div>
-                        </div>
-                       </div>";
-
-                    echo "<div>
-                </div>
-                ";
-                    
                     echo "
                 <div>
                   <h4>Competências pessoias</h4>
                   <p>Competências pertencentes à pessoa procurada</p>
                 ";
 
-                    echo "<pre>";
-                    print_r($results['competence_known']);
-                    echo "</pre>";
+                    echo '<div class="accordion" id="accordion2">
+                            <div class="accordion-group">
+                              <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2">
+                                Know_What</a>
+                                </div>
+                                <div id="collapseOne2" class="accordion-body collapse in">
+                                  <div class="accordion-inner">
+                                    <pre>';
+                                       print_r($results['competence_known']['know_what']);
+                    echo '          </pre> 
+                                  </div>
+                                </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2">
+                                Know_How
+                              </a>
+                            </div>
+                            <div id="collapseTwo2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_how']);
+                    echo '      </pre>
+                             </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTree2">
+                                Know_Why
+                              </a>
+                            </div>
+                            <div id="collapseTree2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_why']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour2">
+                                Know_With
+                              </a>
+                            </div>
+                            <div id="collapseFour2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_with']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive2">
+                                Know_Who
+                              </a>
+                            </div>
+                            <div id="collapseFive2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_who']);
+                    echo '      </pre>
+                            </div>
+                           </div>
+                          </div>';
+                
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix2">
+                                Know_Where
+                              </a>
+                            </div>
+                            <div id="collapseSix2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_where']);
+                    echo '      </pre>
+                               </div>
+                              </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven2">
+                                Know_When
+                              </a>
+                            </div>
+                            <div id="collapseSeven2" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_known']['know_when']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+
+                    echo "
+                </div>
+                ";
 
                     echo "
                 </div>
@@ -252,11 +349,112 @@
                   <p>Competências pertencentes ao cargo ocupado atualmente</p>
                   ";
 
-                    echo "<pre>";
-                    print_r($results['competence_needed']);
-                    echo "</pre>";
+                    echo '<div class="accordion" id="accordion3">
+                            <div class="accordion-group">
+                              <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3">
+                                Know_What</a>
+                                </div>
+                                <div id="collapseOne3" class="accordion-body collapse in">
+                                  <div class="accordion-inner">
+                                    <pre>';
+                                       print_r($results['competence_needed']['know_what']);
+                    echo '          </pre> 
+                                  </div>
+                                </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo3">
+                                Know_How
+                              </a>
+                            </div>
+                            <div id="collapseTwo3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_how']);
+                    echo '      </pre>
+                             </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTree3">
+                                Know_Why
+                              </a>
+                            </div>
+                            <div id="collapseTree3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_why']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseFour3">
+                                Know_With
+                              </a>
+                            </div>
+                            <div id="collapseFour3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_with']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseFive3">
+                                Know_Who
+                              </a>
+                            </div>
+                            <div id="collapseFive3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_who']);
+                    echo '      </pre>
+                            </div>
+                           </div>
+                          </div>';
+                
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSix3">
+                                Know_Where
+                              </a>
+                            </div>
+                            <div id="collapseSix3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_where']);
+                    echo '      </pre>
+                               </div>
+                              </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven3">
+                                Know_When
+                              </a>
+                            </div>
+                            <div id="collapseSeven3" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r($results['competence_needed']['know_when']);
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
 
-                    echo "
+                    echo "</div>
                 </div>
                   ";
                 }
