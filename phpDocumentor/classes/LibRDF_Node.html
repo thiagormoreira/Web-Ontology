@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Ontologia PHP » \LibRDF_Node</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Ontologia PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/ARC2.html"><i class="icon-folder-open"></i> ARC2</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/LibRDF.html"><i class="icon-folder-open"></i> LibRDF</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">36</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___clone" title="__clone :: Create a new node object from an existing node."><span class="description">Create a new node object from an existing node.</span><pre>__clone()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Destroy the Node object."><span class="description">Destroy the Node object.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Return a string representation of the node."><span class="description">Return a string representation of the node.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_getNode" title="getNode :: Return the underlying librdf_node resource."><span class="description">Return the underlying librdf_node resource.</span><pre>getNode()</pre></a></li>
+<li class="method public "><a href="#method_isEqual" title="isEqual :: Compare this node with another node for equality."><span class="description">Compare this node with another node for equality.</span><pre>isEqual()</pre></a></li>
+<li class="method public "><a href="#method_makeNode" title="makeNode :: Wrap a librdf_node resource in the correct Node object."><span class="description">Wrap a librdf_node resource in the correct Node object.</span><pre>makeNode()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_node" title="$node :: The underlying librdf_node resource."><span class="description"></span><pre>$node</pre></a></li></ul>
+</li>
+</ul>
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___clone" title="__clone :: Create a new node object from an existing node."><span class="description">Create a new node object from an existing node.</span><pre>__clone()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Destroy the Node object."><span class="description">Destroy the Node object.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Return a string representation of the node."><span class="description">Return a string representation of the node.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_getNode" title="getNode :: Return the underlying librdf_node resource."><span class="description">Return the underlying librdf_node resource.</span><pre>getNode()</pre></a></li>
+<li class="method public "><a href="#method_isEqual" title="isEqual :: Compare this node with another node for equality."><span class="description">Compare this node with another node for equality.</span><pre>isEqual()</pre></a></li>
+<li class="method public "><a href="#method_makeNode" title="makeNode :: Wrap a librdf_node resource in the correct Node object."><span class="description">Wrap a librdf_node resource in the correct Node object.</span><pre>makeNode()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_node" title="$node :: The underlying librdf_node resource."><span class="description"></span><pre>$node</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\LibRDF_Node"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Node.html">LibRDF_Node</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_node datatype.</p>
+<div class="details">
+<div class="long_description"><p>The values of nodes come from three potential, disjoint sets: URIs,
+literal strings and blank identifiers.  These types are represented by
+<a href="LibRDF_URINode">LibRDF_URINode</a>, <a href="LibRDF_LiteralNode">LibRDF_LiteralNode</a> and
+<a href="LibRDF_BlankNode">LibRDF_BlankNode</a>, respectively.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___clone"></a><div class="element clickable method public method___clone" data-toggle="collapse" data-target=".method___clone .collapse">
+<h2>Create a new node object from an existing node.</h2>
+<pre>__clone() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to copy the node</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Destroy the Node object.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Return a string representation of the node.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A string representation of the node</div>
+</div></div>
+</div>
+<a id="method_getNode"></a><div class="element clickable method public method_getNode" data-toggle="collapse" data-target=".method_getNode .collapse">
+<h2>Return the underlying librdf_node resource.</h2>
+<pre>getNode() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapped node</div>
+</div></div>
+</div>
+<a id="method_isEqual"></a><div class="element clickable method public method_isEqual" data-toggle="collapse" data-target=".method_isEqual .collapse">
+<h2>Compare this node with another node for equality.</h2>
+<pre>isEqual(\LibRDF_Node $node) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Nodes of different types are not equal; thus, a URI of
+http://example.org/ and a literal string of http://example.org are not
+equal, even though they contain the same string.  Similarly, literal
+nodes must match in both type and language to be considered equal.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$node</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The node against which to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether the nodes are equal</div>
+</div></div>
+</div>
+<a id="method_makeNode"></a><div class="element clickable method public method_makeNode" data-toggle="collapse" data-target=".method_makeNode .collapse">
+<h2>Wrap a librdf_node resource in the correct Node object.</h2>
+<pre>makeNode(resource $node) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for use by LibRDF classes, allowing them
+to easily convert a librdf_node resource into the correct type of
+LibRDF_Node object.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>static</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$node</h4>
+<code>resource</code><p>The librdf_node to convert</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new node</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A concrete object implementing Node</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_node"> </a><div class="element clickable property protected property_node" data-toggle="collapse" data-target=".property_node .collapse">
+<h2></h2>
+<pre>$node : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This value must be set by the constructors for the concrete node types.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>protected</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+<a id="\LibRDF_Node"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Node.html">LibRDF_Node</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_node datatype.</p>
+<div class="details">
+<div class="long_description"><p>The values of nodes come from three potential, disjoint sets: URIs,
+literal strings and blank identifiers.  These types are represented by
+<a href="LibRDF_URINode">LibRDF_URINode</a>, <a href="LibRDF_LiteralNode">LibRDF_LiteralNode</a> and
+<a href="LibRDF_BlankNode">LibRDF_BlankNode</a>, respectively.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___clone"></a><div class="element clickable method public method___clone" data-toggle="collapse" data-target=".method___clone .collapse">
+<h2>Create a new node object from an existing node.</h2>
+<pre>__clone() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to copy the node</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Destroy the Node object.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Return a string representation of the node.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A string representation of the node</div>
+</div></div>
+</div>
+<a id="method_getNode"></a><div class="element clickable method public method_getNode" data-toggle="collapse" data-target=".method_getNode .collapse">
+<h2>Return the underlying librdf_node resource.</h2>
+<pre>getNode() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapped node</div>
+</div></div>
+</div>
+<a id="method_isEqual"></a><div class="element clickable method public method_isEqual" data-toggle="collapse" data-target=".method_isEqual .collapse">
+<h2>Compare this node with another node for equality.</h2>
+<pre>isEqual(\LibRDF_Node $node) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Nodes of different types are not equal; thus, a URI of
+http://example.org/ and a literal string of http://example.org are not
+equal, even though they contain the same string.  Similarly, literal
+nodes must match in both type and language to be considered equal.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$node</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The node against which to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether the nodes are equal</div>
+</div></div>
+</div>
+<a id="method_makeNode"></a><div class="element clickable method public method_makeNode" data-toggle="collapse" data-target=".method_makeNode .collapse">
+<h2>Wrap a librdf_node resource in the correct Node object.</h2>
+<pre>makeNode(resource $node) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for use by LibRDF classes, allowing them
+to easily convert a librdf_node resource into the correct type of
+LibRDF_Node object.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>static</th>
+<td></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$node</h4>
+<code>resource</code><p>The librdf_node to convert</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new node</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A concrete object implementing Node</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_node"> </a><div class="element clickable property protected property_node" data-toggle="collapse" data-target=".property_node .collapse">
+<h2></h2>
+<pre>$node : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This value must be set by the constructors for the concrete node types.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>protected</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-14T16:11:20-03:00.<br></footer></div>
+</div>
+</body>
+</html>

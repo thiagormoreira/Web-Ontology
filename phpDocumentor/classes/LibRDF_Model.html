@@ -1,0 +1,1572 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Ontologia PHP » \LibRDF_Model</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Ontologia PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/ARC2.html"><i class="icon-folder-open"></i> ARC2</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/LibRDF.html"><i class="icon-folder-open"></i> LibRDF</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">36</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___clone" title="__clone :: Create a copy of the model."><span class="description">Create a copy of the model.</span><pre>__clone()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Create a new librdf_model."><span class="description">Create a new librdf_model.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Free a model's resources."><span class="description">Free a model's resources.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Return a string representation of the model."><span class="description">Return a string representation of the model.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addStatement" title="addStatement :: Add a statement to the model."><span class="description">Add a statement to the model.</span><pre>addStatement()</pre></a></li>
+<li class="method public "><a href="#method_current" title="current :: Return the current statement on the iterator."><span class="description">Return the current statement on the iterator.</span><pre>current()</pre></a></li>
+<li class="method public "><a href="#method_findStatements" title="findStatements :: Find a statement in the model."><span class="description">Find a statement in the model.</span><pre>findStatements()</pre></a></li>
+<li class="method public "><a href="#method_getArc" title="getArc :: Return a single predicate node that is part of a statement containing
+the given source and target."><span class="description">Return a single predicate node that is part of a statement containing
+the given source and target.</span><pre>getArc()</pre></a></li>
+<li class="method public "><a href="#method_getArcs" title="getArcs :: Return arc nodes that are part of a statement containing the
+given source and predicate."><span class="description">Return arc nodes that are part of a statement containing the
+given source and predicate.</span><pre>getArcs()</pre></a></li>
+<li class="method public "><a href="#method_getListAsArray" title="getListAsArray :: Turns an RDF list into an ordered PHP array."><span class="description">Turns an RDF list into an ordered PHP array.</span><pre>getListAsArray()</pre></a></li>
+<li class="method public "><a href="#method_getModel" title="getModel :: Return the model resource."><span class="description">Return the model resource.</span><pre>getModel()</pre></a></li>
+<li class="method public "><a href="#method_getSource" title="getSource :: Return a single source node that is part of a statement containing
+the given predicate and target."><span class="description">Return a single source node that is part of a statement containing
+the given predicate and target.</span><pre>getSource()</pre></a></li>
+<li class="method public "><a href="#method_getSources" title="getSources :: Return source nodes that are part of a statement containing the
+given predicate and object."><span class="description">Return source nodes that are part of a statement containing the
+given predicate and object.</span><pre>getSources()</pre></a></li>
+<li class="method public "><a href="#method_getTarget" title="getTarget :: Return a single target node that is part of a statement containing the
+given source and predicate."><span class="description">Return a single target node that is part of a statement containing the
+given source and predicate.</span><pre>getTarget()</pre></a></li>
+<li class="method public "><a href="#method_getTargets" title="getTargets :: Return target nodes that are part of a statement containing the
+given source and predicate."><span class="description">Return target nodes that are part of a statement containing the
+given source and predicate.</span><pre>getTargets()</pre></a></li>
+<li class="method public "><a href="#method_hasStatement" title="hasStatement :: Test whether the model contains a statement."><span class="description">Test whether the model contains a statement.</span><pre>hasStatement()</pre></a></li>
+<li class="method public "><a href="#method_key" title="key :: Return the current iteration key."><span class="description">Return the current iteration key.</span><pre>key()</pre></a></li>
+<li class="method public "><a href="#method_loadStatements" title="loadStatements :: Load statements from a URI or string, detecting the necessary parser."><span class="description">Load statements from a URI or string, detecting the necessary parser.</span><pre>loadStatements()</pre></a></li>
+<li class="method public "><a href="#method_loadStatementsFromString" title="loadStatementsFromString :: Load statements using a {@link LibRDF_Parser}."><span class="description">Load statements using a {@link LibRDF_Parser}.</span><pre>loadStatementsFromString()</pre></a></li>
+<li class="method public "><a href="#method_loadStatementsFromURI" title="loadStatementsFromURI :: Load statements from a URI using a {@link LibRDF_Parser}."><span class="description">Load statements from a URI using a {@link LibRDF_Parser}.</span><pre>loadStatementsFromURI()</pre></a></li>
+<li class="method public "><a href="#method_next" title="next :: Advance the iterator's position."><span class="description">Advance the iterator's position.</span><pre>next()</pre></a></li>
+<li class="method public "><a href="#method_removeStatement" title="removeStatement :: Remove a statement from the model."><span class="description">Remove a statement from the model.</span><pre>removeStatement()</pre></a></li>
+<li class="method public "><a href="#method_rewind" title="rewind :: Reset the statement iterator."><span class="description">Reset the statement iterator.</span><pre>rewind()</pre></a></li>
+<li class="method public "><a href="#method_serializeStatements" title="serializeStatements :: Serialize the model as a string."><span class="description">Serialize the model as a string.</span><pre>serializeStatements()</pre></a></li>
+<li class="method public "><a href="#method_serializeStatementsToFile" title="serializeStatementsToFile :: Serialize the model and write the contents to a file."><span class="description">Serialize the model and write the contents to a file.</span><pre>serializeStatementsToFile()</pre></a></li>
+<li class="method public "><a href="#method_size" title="size :: Return the number of statements in the model."><span class="description">Return the number of statements in the model.</span><pre>size()</pre></a></li>
+<li class="method public "><a href="#method_valid" title="valid :: Check whether the statement iterator is still valid."><span class="description">Check whether the statement iterator is still valid.</span><pre>valid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_resetIterator" title="resetIterator :: Discard the current statement iterator and create a new one."><span class="description">Discard the current statement iterator and create a new one.</span><pre>resetIterator()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_iterator" title="$iterator :: The stream iterator over the model's statements."><span class="description"></span><pre>$iterator</pre></a></li>
+<li class="property private "><a href="#property_model" title="$model :: The underlying librdf_model."><span class="description"></span><pre>$model</pre></a></li>
+</ul>
+</li>
+</ul>
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___clone" title="__clone :: Create a copy of the model."><span class="description">Create a copy of the model.</span><pre>__clone()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Create a new librdf_model."><span class="description">Create a new librdf_model.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Free a model's resources."><span class="description">Free a model's resources.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Return a string representation of the model."><span class="description">Return a string representation of the model.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addStatement" title="addStatement :: Add a statement to the model."><span class="description">Add a statement to the model.</span><pre>addStatement()</pre></a></li>
+<li class="method public "><a href="#method_current" title="current :: Return the current statement on the iterator."><span class="description">Return the current statement on the iterator.</span><pre>current()</pre></a></li>
+<li class="method public "><a href="#method_findStatements" title="findStatements :: Find a statement in the model."><span class="description">Find a statement in the model.</span><pre>findStatements()</pre></a></li>
+<li class="method public "><a href="#method_getArc" title="getArc :: Return a single predicate node that is part of a statement containing
+the given source and target."><span class="description">Return a single predicate node that is part of a statement containing
+the given source and target.</span><pre>getArc()</pre></a></li>
+<li class="method public "><a href="#method_getArcs" title="getArcs :: Return arc nodes that are part of a statement containing the
+given source and predicate."><span class="description">Return arc nodes that are part of a statement containing the
+given source and predicate.</span><pre>getArcs()</pre></a></li>
+<li class="method public "><a href="#method_getListAsArray" title="getListAsArray :: Turns an RDF list into an ordered PHP array."><span class="description">Turns an RDF list into an ordered PHP array.</span><pre>getListAsArray()</pre></a></li>
+<li class="method public "><a href="#method_getModel" title="getModel :: Return the model resource."><span class="description">Return the model resource.</span><pre>getModel()</pre></a></li>
+<li class="method public "><a href="#method_getSource" title="getSource :: Return a single source node that is part of a statement containing
+the given predicate and target."><span class="description">Return a single source node that is part of a statement containing
+the given predicate and target.</span><pre>getSource()</pre></a></li>
+<li class="method public "><a href="#method_getSources" title="getSources :: Return source nodes that are part of a statement containing the
+given predicate and object."><span class="description">Return source nodes that are part of a statement containing the
+given predicate and object.</span><pre>getSources()</pre></a></li>
+<li class="method public "><a href="#method_getTarget" title="getTarget :: Return a single target node that is part of a statement containing the
+given source and predicate."><span class="description">Return a single target node that is part of a statement containing the
+given source and predicate.</span><pre>getTarget()</pre></a></li>
+<li class="method public "><a href="#method_getTargets" title="getTargets :: Return target nodes that are part of a statement containing the
+given source and predicate."><span class="description">Return target nodes that are part of a statement containing the
+given source and predicate.</span><pre>getTargets()</pre></a></li>
+<li class="method public "><a href="#method_hasStatement" title="hasStatement :: Test whether the model contains a statement."><span class="description">Test whether the model contains a statement.</span><pre>hasStatement()</pre></a></li>
+<li class="method public "><a href="#method_key" title="key :: Return the current iteration key."><span class="description">Return the current iteration key.</span><pre>key()</pre></a></li>
+<li class="method public "><a href="#method_loadStatements" title="loadStatements :: Load statements from a URI or string, detecting the necessary parser."><span class="description">Load statements from a URI or string, detecting the necessary parser.</span><pre>loadStatements()</pre></a></li>
+<li class="method public "><a href="#method_loadStatementsFromString" title="loadStatementsFromString :: Load statements using a {@link LibRDF_Parser}."><span class="description">Load statements using a {@link LibRDF_Parser}.</span><pre>loadStatementsFromString()</pre></a></li>
+<li class="method public "><a href="#method_loadStatementsFromURI" title="loadStatementsFromURI :: Load statements from a URI using a {@link LibRDF_Parser}."><span class="description">Load statements from a URI using a {@link LibRDF_Parser}.</span><pre>loadStatementsFromURI()</pre></a></li>
+<li class="method public "><a href="#method_next" title="next :: Advance the iterator's position."><span class="description">Advance the iterator's position.</span><pre>next()</pre></a></li>
+<li class="method public "><a href="#method_removeStatement" title="removeStatement :: Remove a statement from the model."><span class="description">Remove a statement from the model.</span><pre>removeStatement()</pre></a></li>
+<li class="method public "><a href="#method_rewind" title="rewind :: Reset the statement iterator."><span class="description">Reset the statement iterator.</span><pre>rewind()</pre></a></li>
+<li class="method public "><a href="#method_serializeStatements" title="serializeStatements :: Serialize the model as a string."><span class="description">Serialize the model as a string.</span><pre>serializeStatements()</pre></a></li>
+<li class="method public "><a href="#method_serializeStatementsToFile" title="serializeStatementsToFile :: Serialize the model and write the contents to a file."><span class="description">Serialize the model and write the contents to a file.</span><pre>serializeStatementsToFile()</pre></a></li>
+<li class="method public "><a href="#method_size" title="size :: Return the number of statements in the model."><span class="description">Return the number of statements in the model.</span><pre>size()</pre></a></li>
+<li class="method public "><a href="#method_valid" title="valid :: Check whether the statement iterator is still valid."><span class="description">Check whether the statement iterator is still valid.</span><pre>valid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_resetIterator" title="resetIterator :: Discard the current statement iterator and create a new one."><span class="description">Discard the current statement iterator and create a new one.</span><pre>resetIterator()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_iterator" title="$iterator :: The stream iterator over the model's statements."><span class="description"></span><pre>$iterator</pre></a></li>
+<li class="property private "><a href="#property_model" title="$model :: The underlying librdf_model."><span class="description"></span><pre>$model</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\LibRDF_Model"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Model.html">LibRDF_Model</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_model datatype.</p>
+<div class="details">
+<div class="long_description"><p>A LibRDF_Model is a collection of <a href="LibRDF_Statement">LibRDF_Statement</a> objects using
+a <a href="LibRDF_Storage">LibRDF_Storage</a> object to save the statements.  Statements are
+added using <a href="addStatement">addStatement</a> or through the use of a
+<a href="LibRDF_Parser">LibRDF_Parser</a> and <a href="loadStatementsFromString">loadStatementsFromString</a> or
+<a href="loadStatementsFromURI">loadStatementsFromURI</a>, and statements are removed using
+<a href="removeStatement">removeStatement</a>.  Statements can be queried through the use of
+either <a href="findStatements">findStatements</a> or a <a href="LibRDF_Query">LibRDF_Query</a> object.  The
+statements can be written to a stream using <a href="LibRDF_Serializer">LibRDF_Serializer</a> and
+<a href="serializeStatements">serializeStatements</a> or <a href="serializeStatementsToFile">serializeStatementsToFile</a>.</p>
+
+<p>This object is iterable.  When used as part of a foreach statement, it
+will iterate over every statement contained in the model.  For example,</p>
+
+<pre><code>foreach ($model as $statement) {
+   echo $statement;
+}</code></pre>
+
+<p>will echo each statement individually.  Unlike <a href="LibRDF_StreamIterator">LibRDF_StreamIterator</a>,
+the Model can be rewound and used for multiple iterations.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___clone"></a><div class="element clickable method public method___clone" data-toggle="collapse" data-target=".method___clone .collapse">
+<h2>Create a copy of the model.</h2>
+<pre>__clone() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Whether a model can be copied depends upon the underlying model factory.
+In-memory storages cannot be cloned, so a clone of models using this
+form of storage will fail.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to copy the model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Create a new librdf_model.</h2>
+<pre>__construct(\LibRDF_Storage $storage, string $options) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>See the <a href="http://librdf.org/">librdf</a> documentation for information
+on the possible options.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$storage</h4>
+<code><a href="../classes/LibRDF_Storage.html">\LibRDF_Storage</a></code><p>The storage on which this model should be built</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>string</code><p>Options to pass to librdf_new_model</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Free a model's resources.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Return a string representation of the model.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function can be used as a lazy form of serializtion.  Use
+a <a href="LibRDF_Serializer">LibRDF_Serializer</a> if you care about the format of the output.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The model as a string</div>
+</div></div>
+</div>
+<a id="method_addStatement"></a><div class="element clickable method public method_addStatement" data-toggle="collapse" data-target=".method_addStatement .collapse">
+<h2>Add a statement to the model.</h2>
+<pre>addStatement(\LibRDF_Statement $statement, \LibRDF_URINode $context) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A statement can be added more than once by adding it under different
+contexts, otherwise adding a duplicate statement will have no effect.
+Not all models support contexts.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement to add</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code><a href="../classes/LibRDF_URINode.html">\LibRDF_URINode</a></code><p>An optional context under which to add the statement</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to add the statement</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_current"></a><div class="element clickable method public method_current" data-toggle="collapse" data-target=".method_current .collapse">
+<h2>Return the current statement on the iterator.</h2>
+<pre>current() : <a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code>The current statement</div>
+</div></div>
+</div>
+<a id="method_findStatements"></a><div class="element clickable method public method_findStatements" data-toggle="collapse" data-target=".method_findStatements .collapse">
+<h2>Find a statement in the model.</h2>
+<pre>findStatements() : <a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A NULL argument for any of source, predicate or target is treated as
+a wildcard.  If a context is given, only statements from that context
+will be returned.  The result is an object that be used in foreach
+iteration.  The returned iterator cannot be rewound.</p>
+
+<p>The search arguments can be either a (source, predicate target) triple
+of LibRDF_Node objects or a LibRDF_Statement object.  Valid argument
+lists are (source, predicate, target, [context]) or
+(statement, [context]).</p>
+
+<p>For more complex queries, see <a href="LibRDF_Query">LibRDF_Query</a>.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></code>An iterator over the matched statements</div>
+</div></div>
+</div>
+<a id="method_getArc"></a><div class="element clickable method public method_getArc" data-toggle="collapse" data-target=".method_getArc .collapse">
+<h2>Return a single predicate node that is part of a statement containing
+the given source and target.</h2>
+<pre>getArc(\LibRDF_Node $source, \LibRDF_Node $target) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements($source, NULL, $target)->current()->getPredicate()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and target is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getArcs"></a><div class="element clickable method public method_getArcs" data-toggle="collapse" data-target=".method_getArcs .collapse">
+<h2>Return arc nodes that are part of a statement containing the
+given source and predicate.</h2>
+<pre>getArcs(\LibRDF_Node $source, \LibRDF_Node $target) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getListAsArray"></a><div class="element clickable method public method_getListAsArray" data-toggle="collapse" data-target=".method_getListAsArray .collapse">
+<h2>Turns an RDF list into an ordered PHP array.</h2>
+<pre>getListAsArray(\LibRDF_Node $head) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$head</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The head of the list.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list as an array.</div>
+</div></div>
+</div>
+<a id="method_getModel"></a><div class="element clickable method public method_getModel" data-toggle="collapse" data-target=".method_getModel .collapse">
+<h2>Return the model resource.</h2>
+<pre>getModel() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapped model resource</div>
+</div></div>
+</div>
+<a id="method_getSource"></a><div class="element clickable method public method_getSource" data-toggle="collapse" data-target=".method_getSource .collapse">
+<h2>Return a single source node that is part of a statement containing
+the given predicate and target.</h2>
+<pre>getSource(\LibRDF_Node $arc, \LibRDF_Node $target) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements(NULL, $predicate, $target)->current()->getSubject()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given predicate and target is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getSources"></a><div class="element clickable method public method_getSources" data-toggle="collapse" data-target=".method_getSources .collapse">
+<h2>Return source nodes that are part of a statement containing the
+given predicate and object.</h2>
+<pre>getSources(\LibRDF_Node $arc, \LibRDF_Node $target) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The arc node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getTarget"></a><div class="element clickable method public method_getTarget" data-toggle="collapse" data-target=".method_getTarget .collapse">
+<h2>Return a single target node that is part of a statement containing the
+given source and predicate.</h2>
+<pre>getTarget(\LibRDF_Node $source, \LibRDF_Node $arc) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements($source, $predicate, NULL)->current()->getTarget()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getTargets"></a><div class="element clickable method public method_getTargets" data-toggle="collapse" data-target=".method_getTargets .collapse">
+<h2>Return target nodes that are part of a statement containing the
+given source and predicate.</h2>
+<pre>getTargets(\LibRDF_Node $source, \LibRDF_Node $arc) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_hasStatement"></a><div class="element clickable method public method_hasStatement" data-toggle="collapse" data-target=".method_hasStatement .collapse">
+<h2>Test whether the model contains a statement.</h2>
+<pre>hasStatement(\LibRDF_Statement $statement) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement for which to search</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether such a statement exists in the graph</div>
+</div></div>
+</div>
+<a id="method_key"></a><div class="element clickable method public method_key" data-toggle="collapse" data-target=".method_key .collapse">
+<h2>Return the current iteration key.</h2>
+<pre>key() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The current key</div>
+</div></div>
+</div>
+<a id="method_loadStatements"></a><div class="element clickable method public method_loadStatements" data-toggle="collapse" data-target=".method_loadStatements .collapse">
+<h2>Load statements from a URI or string, detecting the necessary parser.</h2>
+<pre>loadStatements(string $content, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The URI or string with the contents to load</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the contents</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_loadStatementsFromString"></a><div class="element clickable method public method_loadStatementsFromString" data-toggle="collapse" data-target=".method_loadStatementsFromString .collapse">
+<h2>Load statements using a {@link LibRDF_Parser}.</h2>
+<pre>loadStatementsFromString(\LibRDF_Parser $parser, string $string, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no $base_uri is given, the RDF namespace URI will be used as the
+base for relative URIs.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code><a href="../classes/LibRDF_Parser.html">\LibRDF_Parser</a></code><p>The parser with which to parse the string</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to parse</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs in the string</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the string</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_loadStatementsFromURI"></a><div class="element clickable method public method_loadStatementsFromURI" data-toggle="collapse" data-target=".method_loadStatementsFromURI .collapse">
+<h2>Load statements from a URI using a {@link LibRDF_Parser}.</h2>
+<pre>loadStatementsFromURI(\LibRDF_Parser $parser, string $uri, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code><a href="../classes/LibRDF_Parser.html">\LibRDF_Parser</a></code><p>The parser with which to parse the URI's contents</p>
+</div>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The URI with the contents to load</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs if different from $uri</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the URI contents</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_next"></a><div class="element clickable method public method_next" data-toggle="collapse" data-target=".method_next .collapse">
+<h2>Advance the iterator's position.</h2>
+<pre>next() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_removeStatement"></a><div class="element clickable method public method_removeStatement" data-toggle="collapse" data-target=".method_removeStatement .collapse">
+<h2>Remove a statement from the model.</h2>
+<pre>removeStatement(\LibRDF_Statement $statement, \LibRDF_URINode $context) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement to remove</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code><a href="../classes/LibRDF_URINode.html">\LibRDF_URINode</a></code><p>The context from which to remove the statement</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to remove the statement</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_rewind"></a><div class="element clickable method public method_rewind" data-toggle="collapse" data-target=".method_rewind .collapse">
+<h2>Reset the statement iterator.</h2>
+<pre>rewind() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_serializeStatements"></a><div class="element clickable method public method_serializeStatements" data-toggle="collapse" data-target=".method_serializeStatements .collapse">
+<h2>Serialize the model as a string.</h2>
+<pre>serializeStatements(\LibRDF_Serializer $serializer, string $base_uri) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serializer</h4>
+<code><a href="../classes/LibRDF_Serializer.html">\LibRDF_Serializer</a></code><p>The serializer to use</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use if relative URIs are desired</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to serialize the model</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The model as a string</div>
+</div></div>
+</div>
+<a id="method_serializeStatementsToFile"></a><div class="element clickable method public method_serializeStatementsToFile" data-toggle="collapse" data-target=".method_serializeStatementsToFile .collapse">
+<h2>Serialize the model and write the contents to a file.</h2>
+<pre>serializeStatementsToFile(\LibRDF_Serializer $serializer, string $file_name, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serializer</h4>
+<code><a href="../classes/LibRDF_Serializer.html">\LibRDF_Serializer</a></code><p>The serializer to use</p></div>
+<div class="subelement argument">
+<h4>$file_name</h4>
+<code>string</code><p>The name of the file to which to write</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to serialize the model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_size"></a><div class="element clickable method public method_size" data-toggle="collapse" data-target=".method_size .collapse">
+<h2>Return the number of statements in the model.</h2>
+<pre>size() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of statements</div>
+</div></div>
+</div>
+<a id="method_valid"></a><div class="element clickable method public method_valid" data-toggle="collapse" data-target=".method_valid .collapse">
+<h2>Check whether the statement iterator is still valid.</h2>
+<pre>valid() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether the iterator is still valid</div>
+</div></div>
+</div>
+<a id="method_resetIterator"></a><div class="element clickable method private method_resetIterator" data-toggle="collapse" data-target=".method_resetIterator .collapse">
+<h2>Discard the current statement iterator and create a new one.</h2>
+<pre>resetIterator() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_iterator"> </a><div class="element clickable property private property_iterator" data-toggle="collapse" data-target=".property_iterator .collapse">
+<h2></h2>
+<pre>$iterator : <a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This variable begins as NULL and is set by the iteration functions
+using <a href="resetIterator">resetIterator</a>.  <a href="rewind">rewind</a> resets this variable to
+null, causing subsequent calls of the other iteration function to
+begin anew with a fresh iterator.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_model"> </a><div class="element clickable property private property_model" data-toggle="collapse" data-target=".property_model .collapse">
+<h2></h2>
+<pre>$model : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+<a id="\LibRDF_Model"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Model.html">LibRDF_Model</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_model datatype.</p>
+<div class="details">
+<div class="long_description"><p>A LibRDF_Model is a collection of <a href="LibRDF_Statement">LibRDF_Statement</a> objects using
+a <a href="LibRDF_Storage">LibRDF_Storage</a> object to save the statements.  Statements are
+added using <a href="addStatement">addStatement</a> or through the use of a
+<a href="LibRDF_Parser">LibRDF_Parser</a> and <a href="loadStatementsFromString">loadStatementsFromString</a> or
+<a href="loadStatementsFromURI">loadStatementsFromURI</a>, and statements are removed using
+<a href="removeStatement">removeStatement</a>.  Statements can be queried through the use of
+either <a href="findStatements">findStatements</a> or a <a href="LibRDF_Query">LibRDF_Query</a> object.  The
+statements can be written to a stream using <a href="LibRDF_Serializer">LibRDF_Serializer</a> and
+<a href="serializeStatements">serializeStatements</a> or <a href="serializeStatementsToFile">serializeStatementsToFile</a>.</p>
+
+<p>This object is iterable.  When used as part of a foreach statement, it
+will iterate over every statement contained in the model.  For example,</p>
+
+<pre><code>foreach ($model as $statement) {
+   echo $statement;
+}</code></pre>
+
+<p>will echo each statement individually.  Unlike <a href="LibRDF_StreamIterator">LibRDF_StreamIterator</a>,
+the Model can be rewound and used for multiple iterations.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___clone"></a><div class="element clickable method public method___clone" data-toggle="collapse" data-target=".method___clone .collapse">
+<h2>Create a copy of the model.</h2>
+<pre>__clone() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Whether a model can be copied depends upon the underlying model factory.
+In-memory storages cannot be cloned, so a clone of models using this
+form of storage will fail.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to copy the model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Create a new librdf_model.</h2>
+<pre>__construct(\LibRDF_Storage $storage, string $options) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>See the <a href="http://librdf.org/">librdf</a> documentation for information
+on the possible options.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$storage</h4>
+<code><a href="../classes/LibRDF_Storage.html">\LibRDF_Storage</a></code><p>The storage on which this model should be built</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>string</code><p>Options to pass to librdf_new_model</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Free a model's resources.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Return a string representation of the model.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function can be used as a lazy form of serializtion.  Use
+a <a href="LibRDF_Serializer">LibRDF_Serializer</a> if you care about the format of the output.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The model as a string</div>
+</div></div>
+</div>
+<a id="method_addStatement"></a><div class="element clickable method public method_addStatement" data-toggle="collapse" data-target=".method_addStatement .collapse">
+<h2>Add a statement to the model.</h2>
+<pre>addStatement(\LibRDF_Statement $statement, \LibRDF_URINode $context) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A statement can be added more than once by adding it under different
+contexts, otherwise adding a duplicate statement will have no effect.
+Not all models support contexts.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement to add</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code><a href="../classes/LibRDF_URINode.html">\LibRDF_URINode</a></code><p>An optional context under which to add the statement</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to add the statement</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_current"></a><div class="element clickable method public method_current" data-toggle="collapse" data-target=".method_current .collapse">
+<h2>Return the current statement on the iterator.</h2>
+<pre>current() : <a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code>The current statement</div>
+</div></div>
+</div>
+<a id="method_findStatements"></a><div class="element clickable method public method_findStatements" data-toggle="collapse" data-target=".method_findStatements .collapse">
+<h2>Find a statement in the model.</h2>
+<pre>findStatements() : <a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A NULL argument for any of source, predicate or target is treated as
+a wildcard.  If a context is given, only statements from that context
+will be returned.  The result is an object that be used in foreach
+iteration.  The returned iterator cannot be rewound.</p>
+
+<p>The search arguments can be either a (source, predicate target) triple
+of LibRDF_Node objects or a LibRDF_Statement object.  Valid argument
+lists are (source, predicate, target, [context]) or
+(statement, [context]).</p>
+
+<p>For more complex queries, see <a href="LibRDF_Query">LibRDF_Query</a>.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></code>An iterator over the matched statements</div>
+</div></div>
+</div>
+<a id="method_getArc"></a><div class="element clickable method public method_getArc" data-toggle="collapse" data-target=".method_getArc .collapse">
+<h2>Return a single predicate node that is part of a statement containing
+the given source and target.</h2>
+<pre>getArc(\LibRDF_Node $source, \LibRDF_Node $target) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements($source, NULL, $target)->current()->getPredicate()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and target is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getArcs"></a><div class="element clickable method public method_getArcs" data-toggle="collapse" data-target=".method_getArcs .collapse">
+<h2>Return arc nodes that are part of a statement containing the
+given source and predicate.</h2>
+<pre>getArcs(\LibRDF_Node $source, \LibRDF_Node $target) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getListAsArray"></a><div class="element clickable method public method_getListAsArray" data-toggle="collapse" data-target=".method_getListAsArray .collapse">
+<h2>Turns an RDF list into an ordered PHP array.</h2>
+<pre>getListAsArray(\LibRDF_Node $head) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$head</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The head of the list.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list as an array.</div>
+</div></div>
+</div>
+<a id="method_getModel"></a><div class="element clickable method public method_getModel" data-toggle="collapse" data-target=".method_getModel .collapse">
+<h2>Return the model resource.</h2>
+<pre>getModel() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapped model resource</div>
+</div></div>
+</div>
+<a id="method_getSource"></a><div class="element clickable method public method_getSource" data-toggle="collapse" data-target=".method_getSource .collapse">
+<h2>Return a single source node that is part of a statement containing
+the given predicate and target.</h2>
+<pre>getSource(\LibRDF_Node $arc, \LibRDF_Node $target) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements(NULL, $predicate, $target)->current()->getSubject()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given predicate and target is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getSources"></a><div class="element clickable method public method_getSources" data-toggle="collapse" data-target=".method_getSources .collapse">
+<h2>Return source nodes that are part of a statement containing the
+given predicate and object.</h2>
+<pre>getSources(\LibRDF_Node $arc, \LibRDF_Node $target) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The arc node for which to search</p></div>
+<div class="subelement argument">
+<h4>$target</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The target node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getTarget"></a><div class="element clickable method public method_getTarget" data-toggle="collapse" data-target=".method_getTarget .collapse">
+<h2>Return a single target node that is part of a statement containing the
+given source and predicate.</h2>
+<pre>getTarget(\LibRDF_Node $source, \LibRDF_Node $arc) : <a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is equivalent to</p>
+
+<pre><code>$model->findStatements($source, $predicate, NULL)->current()->getTarget()</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code>A node that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_getTargets"></a><div class="element clickable method public method_getTargets" data-toggle="collapse" data-target=".method_getTargets .collapse">
+<h2>Return target nodes that are part of a statement containing the
+given source and predicate.</h2>
+<pre>getTargets(\LibRDF_Node $source, \LibRDF_Node $arc) : <a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The source node for which to search</p></div>
+<div class="subelement argument">
+<h4>$arc</h4>
+<code><a href="../classes/LibRDF_Node.html">\LibRDF_Node</a></code><p>The predicate node for which to search</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_LookupError.html">\LibRDF_LookupError</a></code></th>
+<td>If no statement with the given source and predicate is found</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/LibRDF_Iterator.html">\LibRDF_Iterator</a></code>An iterator for nodes that matches the criteria</div>
+</div></div>
+</div>
+<a id="method_hasStatement"></a><div class="element clickable method public method_hasStatement" data-toggle="collapse" data-target=".method_hasStatement .collapse">
+<h2>Test whether the model contains a statement.</h2>
+<pre>hasStatement(\LibRDF_Statement $statement) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement for which to search</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether such a statement exists in the graph</div>
+</div></div>
+</div>
+<a id="method_key"></a><div class="element clickable method public method_key" data-toggle="collapse" data-target=".method_key .collapse">
+<h2>Return the current iteration key.</h2>
+<pre>key() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The current key</div>
+</div></div>
+</div>
+<a id="method_loadStatements"></a><div class="element clickable method public method_loadStatements" data-toggle="collapse" data-target=".method_loadStatements .collapse">
+<h2>Load statements from a URI or string, detecting the necessary parser.</h2>
+<pre>loadStatements(string $content, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The URI or string with the contents to load</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the contents</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_loadStatementsFromString"></a><div class="element clickable method public method_loadStatementsFromString" data-toggle="collapse" data-target=".method_loadStatementsFromString .collapse">
+<h2>Load statements using a {@link LibRDF_Parser}.</h2>
+<pre>loadStatementsFromString(\LibRDF_Parser $parser, string $string, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no $base_uri is given, the RDF namespace URI will be used as the
+base for relative URIs.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code><a href="../classes/LibRDF_Parser.html">\LibRDF_Parser</a></code><p>The parser with which to parse the string</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to parse</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs in the string</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the string</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_loadStatementsFromURI"></a><div class="element clickable method public method_loadStatementsFromURI" data-toggle="collapse" data-target=".method_loadStatementsFromURI .collapse">
+<h2>Load statements from a URI using a {@link LibRDF_Parser}.</h2>
+<pre>loadStatementsFromURI(\LibRDF_Parser $parser, string $uri, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parser</h4>
+<code><a href="../classes/LibRDF_Parser.html">\LibRDF_Parser</a></code><p>The parser with which to parse the URI's contents</p>
+</div>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The URI with the contents to load</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use for relative URIs if different from $uri</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to parse the URI contents</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_next"></a><div class="element clickable method public method_next" data-toggle="collapse" data-target=".method_next .collapse">
+<h2>Advance the iterator's position.</h2>
+<pre>next() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_removeStatement"></a><div class="element clickable method public method_removeStatement" data-toggle="collapse" data-target=".method_removeStatement .collapse">
+<h2>Remove a statement from the model.</h2>
+<pre>removeStatement(\LibRDF_Statement $statement, \LibRDF_URINode $context) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code><a href="../classes/LibRDF_Statement.html">\LibRDF_Statement</a></code><p>The statement to remove</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code><a href="../classes/LibRDF_URINode.html">\LibRDF_URINode</a></code><p>The context from which to remove the statement</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to remove the statement</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_rewind"></a><div class="element clickable method public method_rewind" data-toggle="collapse" data-target=".method_rewind .collapse">
+<h2>Reset the statement iterator.</h2>
+<pre>rewind() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_serializeStatements"></a><div class="element clickable method public method_serializeStatements" data-toggle="collapse" data-target=".method_serializeStatements .collapse">
+<h2>Serialize the model as a string.</h2>
+<pre>serializeStatements(\LibRDF_Serializer $serializer, string $base_uri) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serializer</h4>
+<code><a href="../classes/LibRDF_Serializer.html">\LibRDF_Serializer</a></code><p>The serializer to use</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use if relative URIs are desired</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to serialize the model</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The model as a string</div>
+</div></div>
+</div>
+<a id="method_serializeStatementsToFile"></a><div class="element clickable method public method_serializeStatementsToFile" data-toggle="collapse" data-target=".method_serializeStatementsToFile .collapse">
+<h2>Serialize the model and write the contents to a file.</h2>
+<pre>serializeStatementsToFile(\LibRDF_Serializer $serializer, string $file_name, string $base_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serializer</h4>
+<code><a href="../classes/LibRDF_Serializer.html">\LibRDF_Serializer</a></code><p>The serializer to use</p></div>
+<div class="subelement argument">
+<h4>$file_name</h4>
+<code>string</code><p>The name of the file to which to write</p></div>
+<div class="subelement argument">
+<h4>$base_uri</h4>
+<code>string</code><p>The base URI to use</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to serialize the model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_size"></a><div class="element clickable method public method_size" data-toggle="collapse" data-target=".method_size .collapse">
+<h2>Return the number of statements in the model.</h2>
+<pre>size() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of statements</div>
+</div></div>
+</div>
+<a id="method_valid"></a><div class="element clickable method public method_valid" data-toggle="collapse" data-target=".method_valid .collapse">
+<h2>Check whether the statement iterator is still valid.</h2>
+<pre>valid() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Whether the iterator is still valid</div>
+</div></div>
+</div>
+<a id="method_resetIterator"></a><div class="element clickable method private method_resetIterator" data-toggle="collapse" data-target=".method_resetIterator .collapse">
+<h2>Discard the current statement iterator and create a new one.</h2>
+<pre>resetIterator() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_iterator"> </a><div class="element clickable property private property_iterator" data-toggle="collapse" data-target=".property_iterator .collapse">
+<h2></h2>
+<pre>$iterator : <a href="../classes/LibRDF_StreamIterator.html">\LibRDF_StreamIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This variable begins as NULL and is set by the iteration functions
+using <a href="resetIterator">resetIterator</a>.  <a href="rewind">rewind</a> resets this variable to
+null, causing subsequent calls of the other iteration function to
+begin anew with a fresh iterator.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_model"> </a><div class="element clickable property private property_model" data-toggle="collapse" data-target=".property_model .collapse">
+<h2></h2>
+<pre>$model : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-14T16:11:20-03:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -78,7 +78,7 @@
 
             <div class="jumbotron">
                 <h1>Ontologia com PHP!</h1>
-                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p class="lead">Ontologia Web com PHP</p>
             </div>
 
             <hr>
@@ -97,27 +97,141 @@
                     require_once 'ontologies/sparql.php';
                     $results = query($_POST['person_name']);
                     echo "<pre> Cargo: " . $results['post']['role'] . " => " . $results['post']['context'] . "</pre>";
-
+                    
+                    
+                    $needed = count($results['competence_needed'], true);
+                    $known = count($results['competence_known'], true);
+                    
+                    $knownPerc = number_format($known * 100 / $needed, 2);
+                    $neededPerc = 100 - $knownPerc;  
+                
+                echo '
+                <h4>Nome que nao sei</h4>
+                <div class="progress">
+                    <div class="bar bar-success" style="width: ' . $knownPerc . '%;">' . $knownPerc . '%</div>
+                    <div class="bar bar-danger" style="width: ' . $neededPerc . '%;">' . $neededPerc . '%</div>
+                </div>';
+                    
                     echo"
                 <div>
                   <h4>Competências que faltam para o atual cargo</h4>
                   <p>Deficiência atual do funcionário</p>
                   ";
+                
+                    echo '<div class="accordion" id="accordion2">
+                            <div class="accordion-group">
+                              <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                Know_What</a>
+                                </div>
+                                <div id="collapseOne" class="accordion-body collapse in">
+                                  <div class="accordion-inner">
+                                    <pre>';
+                                       print_r(array("know_what" => array_diff($results['competence_needed']['know_what'], $results['competence_known']['know_what'])));
+                    echo '          </pre> 
+                                  </div>
+                                </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                Know_How
+                              </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_how" => array_diff($results['competence_needed']['know_how'], $results['competence_known']['know_how'])));
+                    echo '      </pre>
+                             </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTree">
+                                Know_Why
+                              </a>
+                            </div>
+                            <div id="collapseTree" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_why" => array_diff($results['competence_needed']['know_why'], $results['competence_known']['know_why'])));
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                                Know_With
+                              </a>
+                            </div>
+                            <div id="collapseFour" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_with" => array_diff($results['competence_needed']['know_with'], $results['competence_known']['know_with'])));
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                                Know_Who
+                              </a>
+                            </div>
+                            <div id="collapseFive" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_who" => array_diff($results['competence_needed']['know_who'], $results['competence_known']['know_who'])));
+                    echo '      </pre>
+                            </div>
+                           </div>
+                          </div>';
+                
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
+                                Know_Where
+                              </a>
+                            </div>
+                            <div id="collapseSix" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_where" => array_diff($results['competence_needed']['know_where'], $results['competence_known']['know_where'])));
+                    echo '      </pre>
+                               </div>
+                              </div>
+                            </div>';
+                    
+                    echo '<div class="accordion-group">
+                            <div class="accordion-heading">
+                              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
+                                Know_When
+                              </a>
+                            </div>
+                            <div id="collapseSeven" class="accordion-body collapse">
+                              <div class="accordion-inner">
+                                <pre>';
+                                    print_r(array("know_when" => array_diff($results['competence_needed']['know_when'], $results['competence_known']['know_when'])));
+                    echo '      </pre>
+                              </div>
+                            </div>
+                          </div>';
+                    
+                    
+                    echo "</div>
+                        </div>
+                       </div>";
 
-                    echo "<pre>";
-                    print_r(array("know_what" => array_diff($results['competence_needed']['know_what'], $results['competence_known']['know_what'])));
-                    print_r(array("know_how" => array_diff($results['competence_needed']['know_how'], $results['competence_known']['know_how'])));
-                    print_r(array("know_why" => array_diff($results['competence_needed']['know_why'], $results['competence_known']['know_why'])));
-                    print_r(array("know_with" => array_diff($results['competence_needed']['know_with'], $results['competence_known']['know_with'])));
-                    print_r(array("know_who" => array_diff($results['competence_needed']['know_who'], $results['competence_known']['know_who'])));
-                    print_r(array("know_where" => array_diff($results['competence_needed']['know_where'], $results['competence_known']['know_where'])));
-                    print_r(array("know_when" => array_diff($results['competence_needed']['know_when'], $results['competence_known']['know_when'])));
-                    echo "</pre>";
-
-                    echo "
+                    echo "<div>
                 </div>
                 ";
-
+                    
                     echo "
                 <div>
                   <h4>Competências pessoias</h4>
@@ -162,6 +276,7 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="/assets/js/jquery.js"></script>
         <script src="/assets/js/bootstrap-typeahead.js"></script>
-
+        <script src="/assets/js/bootstrap-collapse.js"></script>
+        <script src="/assets/js/bootstrap-transition.js"></script>
     </body>
 </html>

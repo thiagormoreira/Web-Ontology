@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Ontologia PHP » \LibRDF_Serializer</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Ontologia PHP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/ARC2.html"><i class="icon-folder-open"></i> ARC2</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/LibRDF.html"><i class="icon-folder-open"></i> LibRDF</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">36</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Create a new LibRDF_Serializer."><span class="description">Create a new LibRDF_Serializer.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Free the serializer's resources."><span class="description">Free the serializer's resources.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_getSerializer" title="getSerializer :: Return the wrapped librdf_serializer resource."><span class="description">Return the wrapped librdf_serializer resource.</span><pre>getSerializer()</pre></a></li>
+<li class="method public "><a href="#method_setNamespace" title="setNamespace :: Set a prefix to URI mapping."><span class="description">Set a prefix to URI mapping.</span><pre>setNamespace()</pre></a></li>
+<li class="method public "><a href="#method_setNamespaces" title="setNamespaces :: Set namespace mappings on class level."><span class="description">Set namespace mappings on class level.</span><pre>setNamespaces()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_namespaces" title="$namespaces :: Namespace mappings shared accross instances."><span class="description"></span><pre>$namespaces</pre></a></li>
+<li class="property private "><a href="#property_serializer" title="$serializer :: The underlying librdf_serializer resource."><span class="description"></span><pre>$serializer</pre></a></li>
+</ul>
+</li>
+</ul>
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Create a new LibRDF_Serializer."><span class="description">Create a new LibRDF_Serializer.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Free the serializer's resources."><span class="description">Free the serializer's resources.</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_getSerializer" title="getSerializer :: Return the wrapped librdf_serializer resource."><span class="description">Return the wrapped librdf_serializer resource.</span><pre>getSerializer()</pre></a></li>
+<li class="method public "><a href="#method_setNamespace" title="setNamespace :: Set a prefix to URI mapping."><span class="description">Set a prefix to URI mapping.</span><pre>setNamespace()</pre></a></li>
+<li class="method public "><a href="#method_setNamespaces" title="setNamespaces :: Set namespace mappings on class level."><span class="description">Set namespace mappings on class level.</span><pre>setNamespaces()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_namespaces" title="$namespaces :: Namespace mappings shared accross instances."><span class="description"></span><pre>$namespaces</pre></a></li>
+<li class="property private "><a href="#property_serializer" title="$serializer :: The underlying librdf_serializer resource."><span class="description"></span><pre>$serializer</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\LibRDF_Serializer"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Serializer.html">LibRDF_Serializer</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_serializer datatype.</p>
+<div class="details">
+<div class="long_description"><p>This class is used in conjunction with <a href="LibRDF_Model">LibRDF_Model</a> to produce
+a serialization of a set of statements.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Create a new LibRDF_Serializer.</h2>
+<pre>__construct(string $name, string $mime_type, string $type_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Name is the name of the serializer to use.  Common choices are
+"rdfxml", "ntriples" and "turtle".</p>
+
+<p>The "rdfxml" serializer is not pretty, outputing a flat list of
+one XML element per statement.  "rdfxml-abbrev" is a bit nicer, but
+slower.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the serializer to use</p></div>
+<div class="subelement argument">
+<h4>$mime_type</h4>
+<code>string</code><p>The MIME type of the syntax</p></div>
+<div class="subelement argument">
+<h4>$type_uri</h4>
+<code>string</code><p>The URI of the syntax</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new serializer</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Free the serializer's resources.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getSerializer"></a><div class="element clickable method public method_getSerializer" data-toggle="collapse" data-target=".method_getSerializer .collapse">
+<h2>Return the wrapped librdf_serializer resource.</h2>
+<pre>getSerializer() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapper resource</div>
+</div></div>
+</div>
+<a id="method_setNamespace"></a><div class="element clickable method public method_setNamespace" data-toggle="collapse" data-target=".method_setNamespace .collapse">
+<h2>Set a prefix to URI mapping.</h2>
+<pre>setNamespace(string $uri, string $prefix) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The namespace URI</p></div>
+<div class="subelement argument">
+<h4>$prefix</h4>
+<code>string</code><p>The string prefix to use</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to set the prefix</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_setNamespaces"></a><div class="element clickable method public method_setNamespaces" data-toggle="collapse" data-target=".method_setNamespaces .collapse">
+<h2>Set namespace mappings on class level.</h2>
+<pre>setNamespaces(array $map) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$map</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_namespaces"> </a><div class="element clickable property private property_namespaces" data-toggle="collapse" data-target=".property_namespaces .collapse">
+<h2></h2>
+<pre>$namespaces : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_serializer"> </a><div class="element clickable property private property_serializer" data-toggle="collapse" data-target=".property_serializer .collapse">
+<h2></h2>
+<pre>$serializer : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+<a id="\LibRDF_Serializer"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/LibRDF_Serializer.html">LibRDF_Serializer</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A wrapper around the librdf_serializer datatype.</p>
+<div class="details">
+<div class="long_description"><p>This class is used in conjunction with <a href="LibRDF_Model">LibRDF_Model</a> to produce
+a serialization of a set of statements.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/LibRDF.html">LibRDF</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:david@gophernet.org">David Shea</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2006 David Shea</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="">LGPL/GPL/APACHE</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>Release: 1.0.0</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.gophernet.org/projects/redland-php/">http://www.gophernet.org/projects/redland-php/</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Create a new LibRDF_Serializer.</h2>
+<pre>__construct(string $name, string $mime_type, string $type_uri) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Name is the name of the serializer to use.  Common choices are
+"rdfxml", "ntriples" and "turtle".</p>
+
+<p>The "rdfxml" serializer is not pretty, outputing a flat list of
+one XML element per statement.  "rdfxml-abbrev" is a bit nicer, but
+slower.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the serializer to use</p></div>
+<div class="subelement argument">
+<h4>$mime_type</h4>
+<code>string</code><p>The MIME type of the syntax</p></div>
+<div class="subelement argument">
+<h4>$type_uri</h4>
+<code>string</code><p>The URI of the syntax</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to create a new serializer</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Free the serializer's resources.</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getSerializer"></a><div class="element clickable method public method_getSerializer" data-toggle="collapse" data-target=".method_getSerializer .collapse">
+<h2>Return the wrapped librdf_serializer resource.</h2>
+<pre>getSerializer() : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This function is intended for other LibRDF classes and should not
+be called.</p></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The wrapper resource</div>
+</div></div>
+</div>
+<a id="method_setNamespace"></a><div class="element clickable method public method_setNamespace" data-toggle="collapse" data-target=".method_setNamespace .collapse">
+<h2>Set a prefix to URI mapping.</h2>
+<pre>setNamespace(string $uri, string $prefix) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><p>The namespace URI</p></div>
+<div class="subelement argument">
+<h4>$prefix</h4>
+<code>string</code><p>The string prefix to use</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/LibRDF_Error.html">\LibRDF_Error</a></code></th>
+<td>If unable to set the prefix</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_setNamespaces"></a><div class="element clickable method public method_setNamespaces" data-toggle="collapse" data-target=".method_setNamespaces .collapse">
+<h2>Set namespace mappings on class level.</h2>
+<pre>setNamespaces(array $map) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$map</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_namespaces"> </a><div class="element clickable property private property_namespaces" data-toggle="collapse" data-target=".property_namespaces .collapse">
+<h2></h2>
+<pre>$namespaces : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_serializer"> </a><div class="element clickable property private property_serializer" data-toggle="collapse" data-target=".property_serializer .collapse">
+<h2></h2>
+<pre>$serializer : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-03-14T16:11:20-03:00.<br></footer></div>
+</div>
+</body>
+</html>
