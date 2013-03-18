@@ -112,11 +112,12 @@
                     <div class="bar bar-danger" style="width: ' . $neededPerc . '%;">' . $neededPerc . '%</div>
                 </div>';
                 ?>
+            </div>
+            
                 <div>
                   <h4>Competências que faltam para o atual cargo</h4>
                   <p>Deficiência atual do funcionário</p>
                 </div>
-            </div>
                       <?php
                 
                     echo '<div class="accordion" id="accordion1">
