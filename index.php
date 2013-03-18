@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Template &middot; Bootstrap</title>
+        <title>Ontologia Web - PHP</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -116,6 +116,7 @@
                   <h4>Competências que faltam para o atual cargo</h4>
                   <p>Deficiência atual do funcionário</p>
                 </div>
+            </div>
                       <?php
                 
                     echo '<div class="accordion" id="accordion1">
@@ -334,14 +335,6 @@
                             </div>
                           </div>';
 
-                    echo "
-                </div>
-                ";
-
-                    echo "
-                </div>
-                ";
-
                     echo"
                 <div>
                   <h4>Competências do cargo</h4>
@@ -451,12 +444,13 @@
                     echo '      </pre>
                               </div>
                             </div>
-                          </div>';
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>';
                 }
                 ?>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <hr>
